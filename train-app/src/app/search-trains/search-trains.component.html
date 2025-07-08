@@ -1,0 +1,35 @@
+<div class="container mt-4">
+  <h3>Search Trains Between Stations</h3>
+
+  <div class="form-inline mb-3">
+    <input [(ngModel)]="from" class="form-control mr-2" placeholder="From Station" />
+    <input [(ngModel)]="to" class="form-control mr-2" placeholder="To Station" />
+    <button class="btn btn-primary" (click)="search()">Search</button>
+  </div>
+
+  <div *ngIf="trains.length > 0">
+    <h5>Trains from {{ from }} to {{ to }}</h5>
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>Train ID</th>
+          <th>Arrival at {{ from }}</th>
+          <th>Departure from {{ from }}</th>
+          <th>Arrival at {{ to }}</th>
+          <th>Departure from {{ to }}</th>
+          <th>Days</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let train of trains">
+          <td>{{ train.id }}</td>
+          <td>{{ train.stations[from]?.arrival }}</td>
+          <td>{{ train.stations[from]?.departure }}</td>
+          <td>{{ train.stations[to]?.arrival }}</td>
+          <td>{{ train.stations[to]?.departure }}</td>
+          <td>{{ train.stations[to]?.days?.join(', ') }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

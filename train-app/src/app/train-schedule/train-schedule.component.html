@@ -1,0 +1,28 @@
+<div class="container mt-4">
+  <h4>Schedule for Train {{ trainId }}</h4>
+
+  <table class="table table-bordered mt-3" *ngIf="stationEntries.length > 0">
+    <thead>
+      <tr>
+        <th>Station</th>
+        <th>Arrival</th>
+        <th>Departure</th>
+        <th>Day</th>
+        <th>Days of Operation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let entry of stationEntries">
+        <td>{{ entry.station }}</td>
+        <td>{{ entry.arrival }}</td>
+        <td>{{ entry.departure }}</td>
+        <td>{{ entry.day }}</td>
+        <td>{{ entry.days.join(', ') }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="stationEntries.length === 0" class="alert alert-warning">
+    No schedule found for this train.
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="container mt-4">
+  <h3>Schedule at Station: {{ stationName }}</h3>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Train ID</th>
+        <th>Arrival</th>
+        <th>Departure</th>
+        <th>Days</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let entry of trainEntries">
+        <td>{{ entry.trainId }}</td>
+        <td>{{ entry.arrival }}</td>
+        <td>{{ entry.deprature }}</td>
+        <td>{{ entry.days.join(', ') }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

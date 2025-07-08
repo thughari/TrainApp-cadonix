@@ -1,0 +1,9 @@
+<div class="container mt-4">
+  <h3>All Train IDs</h3>
+  <ul class="list-group">
+    <li *ngFor="let trainId of trainIds" class="list-group-item d-flex justify-content-between">
+      {{ trainId }}
+      <button class="btn btn-sm btn-primary" [routerLink]="['/trains', trainId]">View Schedule</button>
+    </li>
+  </ul>
+</div>

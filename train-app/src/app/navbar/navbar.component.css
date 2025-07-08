@@ -1,0 +1,16 @@
+.navbar {
+  background: linear-gradient(90deg, #007bff 0%, #6610f2 100%);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.navbar-brand {
+  font-weight: bold;
+  color: #fff !important;
+  letter-spacing: 2px;
+}
+.nav-link {
+  color: #f8f9fa !important;
+  transition: color 0.2s;
+}
+.nav-link:hover {
+  color: #ffd700 !important;
+}

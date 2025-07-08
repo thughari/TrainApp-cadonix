@@ -1,0 +1,26 @@
+<div class="container mt-4">
+  <h3>All Stations</h3>
+  <ul class="list-group">
+    <li *ngFor="let station of stations" class="list-group-item d-flex justify-content-between">
+      {{ station }}
+      <a class="btn btn-sm btn-primary" [routerLink]="['/stations', station]">View Schedule</a>
+    </li>
+  </ul>
+
+  <div *ngIf="selectedStation" class="mt-4">
+    <h5>Schedule at Station: {{ selectedStation.name }}</h5>
+    <table class="table table-striped">
+      <thead>
+        <tr><th>Train ID</th><th>Arrival</th><th>Departure</th><th>Days</th></tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let entry of trainEntries">
+            <td>{{ entry.trainId }}</td>
+            <td>{{ entry.arrival }}</td>
+            <td>{{ entry.deprature }}</td>
+            <td>{{ entry.days.join(', ') }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
